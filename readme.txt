@@ -8,9 +8,11 @@ Stable tag: 0.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+Send an event to Google Analytics when a visitor interacts with the Tawkto Chat widget.
 
 == Description ==
+
+This plugin sends an Event to Google Analytics if the visitors chat for at least 60 seconds, or if he submit the "Chat Offline Form"
 
 This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
 
@@ -68,19 +70,7 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 == Changelog ==
 
 = 1.0 =
-* A change since the previous version.
-* Another change.
-
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
-
-== Upgrade Notice ==
-
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
-
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
+* First relase *
 
 == Arbitrary section ==
 
