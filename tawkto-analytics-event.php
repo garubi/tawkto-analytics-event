@@ -27,7 +27,8 @@ function TAE_enqueue_js(){
 	wp_enqueue_script( 'tawkto_js', TAE_URL . '/public/js/tawkto-api-client.js', '', TAE_VER, true );
 	wp_localize_script( 'tawkto_js', 'TAE_VAR', array(
 		'chat_min_lenght' => 60, // seconds
-		'eventCategory' => __( 'Chat', 'tawkto-analytics-event' ),
+		'eventCategoryChatOngoing' => __( 'Chat', 'tawkto-analytics-event' ),
+		'eventCategoryonOfflineSubmit' => __( 'Chat', 'tawkto-analytics-event' ),
 		'eventActionChatOngoing'	=> __( 'Ongoing chat', 'tawkto-analytics-event' ),
 		'eventActiononOfflineSubmit' => __( 'Form sent from offline chat', 'tawkto-analytics-event' ),
 		'debug'	=> WP_DEBUG,

@@ -16,7 +16,7 @@ var ongoing_check_id= setInterval(function(){
       (TAE_VAR.debug) ? console.log('Ongoing status difftime: ', diff) : '';
 			if ( diff > 1000 * TAE_VAR.chat_min_lenght){
 				(TAE_VAR.debug) ? console.log('Send event Ongoing chat to Analytics') : '';
-				ga('send', 'event', { eventCategory: TAE_VAR.eventCategory, eventAction: TAE_VAR.eventActionChatOngoing, eventLabel: '1minuto'});
+				ga('send', 'event', { eventCategory: TAE_VAR.eventCategoryChatOngoing, eventAction: TAE_VAR.eventActionChatOngoing, eventLabel: TAE_VAR.chat_min_lenght + ' seconds'});
 				clearInterval(ongoing_check_id);
 			}
 		}
@@ -31,5 +31,5 @@ var ongoing_check_id= setInterval(function(){
 
 Tawk_API.onOfflineSubmit = function(data){
 	(TAE_VAR.debug) ? console.log('Send event Chat offline submit to Analytics') : '';
-	ga('send', 'event', { eventCategory: TAE_VAR.eventCategory, eventAction: TAE_VAR.eventActiononOfflineSubmit});
+	ga('send', 'event', { eventCategory: TAE_VAR.eventCategoryonOfflineSubmit, eventAction: TAE_VAR.eventActiononOfflineSubmit});
 };
