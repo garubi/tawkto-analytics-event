@@ -1,7 +1,7 @@
 # Tawkto Analytics Event #
-**Contributors:** (this should be a list of wordpress.org userid's)  
-**Donate link:** https://example.com/  
-**Tags:** comments, spam  
+**Contributors:** garubi  
+**Donate link:** https://paypal.me/StefanoGaruti  
+**Tags:** chat, tawkto, analytics  
 **Requires at least:** 4.5  
 **Tested up to:** 5.4.2  
 **Stable tag:** 0.1.0  
