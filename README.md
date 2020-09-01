@@ -1,4 +1,4 @@
-# Tawkto Analytics Event #
+# Analytics Events for Tawkto Chat #
 **Contributors:** garubi  
 **Donate link:** https://paypal.me/StefanoGaruti  
 **Tags:** chat, tawkto, analytics  
@@ -18,6 +18,7 @@ This plugin sends an Event to Google Analytics if the visitors chat for at least
 This plugins requires that on your site is active a Tawk.to chat widget. The easyest way to install a Tawkto Chat on your site is by the [official Tawkto WordPress plugin](https://it.wordpress.org/plugins/tawkto-live-chat/) but you can copy-paste the widget code from Tawkto dashboard too.
 
 This plugin supports automatic updates via [GitHub Updater plugin](https://github.com/afragen/github-updater)
+
 
 ## Changelog ##
 

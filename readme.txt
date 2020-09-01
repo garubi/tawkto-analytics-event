@@ -1,4 +1,4 @@
-=== Tawkto Analytics Event ===
+=== Analytics Events for Tawkto Chat ===
 Contributors: garubi
 Donate link: https://paypal.me/StefanoGaruti
 Tags: chat, tawkto, analytics
