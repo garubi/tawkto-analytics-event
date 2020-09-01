@@ -1,0 +1,50 @@
+# Copyright (C) 2020 Stefano Garuti
+# This file is distributed under the same license as the Analytics Events for Tawkto Chat plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Analytics Events for Tawkto Chat 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/tawkto-analytics-"
+"event\n"
+"POT-Creation-Date: 2020-09-01T08:52:29+00:00\n"
+"PO-Revision-Date: 2020-09-01 11:09+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Eazy Po 0.9.5.3\n"
+"X-Domain: tawkto-analytics-event\n"
+
+#.   Plugin Name of the plugin
+msgid "Analytics Events for Tawkto Chat"
+msgstr "Analytics Events for Tawkto Chat"
+
+#.   Plugin URI of the plugin
+msgid "https://github.com/garubi/tawkto-analytics-event"
+msgstr "https://github.com/garubi/tawkto-analytics-event"
+
+#.   Description of the plugin
+msgid "Send an event to Google Analytics when a visitor interacts with the Tawkto Chat widget."
+msgstr "Invia un Evento a Google Analytics quando un visitatore interagisce con il widget della chat di Tawkto."
+
+#.   Author of the plugin
+msgid "Stefano Garuti"
+msgstr "Stefano Garuti"
+
+#.   Author URI of the plugin
+msgid "https://garuti.it"
+msgstr "https://garuti.it"
+
+#: tawkto-analytics-event.php:30
+msgid "Chat"
+msgstr "Chat"
+
+#: tawkto-analytics-event.php:31
+msgid "Ongoing chat"
+msgstr "Chat In corso"
+
+#: tawkto-analytics-event.php:32
+msgid "Form sent from offline chat"
+msgstr "Invio form per chat offline"
