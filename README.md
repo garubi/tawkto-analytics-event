@@ -14,6 +14,8 @@ Send an event to Google Analytics when a visitor interacts with the Tawkto Chat 
 
 This plugin sends an Event to Google Analytics if the visitors chat for at least 60 seconds, or if he submit the "Chat Offline Form"
 
+This plugins requires that on your site is active a Tawk.to chat widget. The easyest way to install a Tawkto Chat on your site is by the [official Tawkto WordPress plugin](https://it.wordpress.org/plugins/tawkto-live-chat/) but you can copy-paste the widget code from Tawkto dashboard too.
+
 ## Changelog ##
 
 ### 1.0 ###
