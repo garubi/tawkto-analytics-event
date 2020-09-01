@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name:     Analytics Events for Tawkto Chat
- * Plugin URI:      PLUGIN SITE HERE
+ * Plugin URI:      https://github.com/garubi/tawkto-analytics-event
  * Description:     Send an event to Google Analytics when a visitor interacts with the Tawkto Chat widget.
  * Author:          Stefano Garuti
- * Author URI:      YOUR SITE HERE
+ * Author URI:      https://garuti.it
  * Text Domain:     tawkto-analytics-event
  * Domain Path:     /languages
  * Version:         0.1.0
- * GitHub Plugin URI:
+ * GitHub Plugin URI: https://github.com/garubi/tawkto-analytics-event
  *
  * @package         Tawkto_Analytics_Event
  */
