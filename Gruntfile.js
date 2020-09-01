@@ -27,28 +27,29 @@ module.exports = function( grunt ) {
 			},
 		},
 
-		makepot: {
-			target: {
-				options: {
-					domainPath: '/languages',
-					exclude: [ '\.git/*', 'bin/*', 'node_modules/*', 'tests/*' ],
-					mainFile: 'tawkto-analytics-event.php',
-					potFilename: 'tawkto-analytics-event.pot',
-					potHeaders: {
-						poedit: true,
-						'x-poedit-keywordslist': true
-					},
-					type: 'wp-plugin',
-					updateTimestamp: true
-				}
-			}
-		},
+		// makepot: {
+		// 	target: {
+		// 		options: {
+		// 			domainPath: '/languages',
+		// 			exclude: [ '\.git/*', 'bin/*', 'node_modules/*', 'tests/*' ],
+		// 			mainFile: 'tawkto-analytics-event.php',
+		// 			potFilename: 'tawkto-analytics-event.pot',
+		// 			potHeaders: {
+		// 				poedit: true,
+		// 				'x-poedit-keywordslist': true
+		// 			},
+		// 			type: 'wp-plugin',
+		// 			updateTimestamp: true
+		// 		}
+		// 	}
+		// },
 	} );
 
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 	grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
-	grunt.registerTask( 'default', [ 'i18n','readme' ] );
-	grunt.registerTask( 'i18n', ['addtextdomain', 'makepot'] );
+	grunt.registerTask( 'default', [ 'addtextdomain','readme' ] );
+	// grunt.registerTask( 'default', [ 'i18n','readme' ] );
+	// grunt.registerTask( 'i18n', ['addtextdomain', 'makepot'] );
 	grunt.registerTask( 'readme', ['wp_readme_to_markdown'] );
 
 	grunt.util.linefeed = '\n';
