@@ -5,7 +5,7 @@
 **Requires at least:** 4.5  
 **Tested up to:** 5.4.2  
 **Requires PHP:** 7.3.2  
-**Stable tag:** 1.0  
+**Stable tag:** 1.0.1  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -20,6 +20,9 @@ This plugins requires that on your site is active a Tawk.to chat widget. The eas
 This plugin supports automatic updates via [GitHub Updater plugin](https://github.com/afragen/github-updater)
 
 ## Changelog ##
+
+### 1.0.1 ###
+* Fix sending the event onOfflineSubmit
 
 ### 1.0 ###
 * First relase
