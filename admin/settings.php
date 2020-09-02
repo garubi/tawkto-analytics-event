@@ -14,8 +14,8 @@ class AnalyticsEventsForTawktoChat {
 
 	public function analytics_events_for_tawkto_chat_add_plugin_page() {
 		add_options_page(
-			'Analytics Events for Tawk.to Chat Configuration', // page_title
-			'Tawk.to Chat Analytics', // menu_title
+			__( 'Analytics Events for Tawk.to Chat Configuration', 'tawkto-analytics-event' ), // page_title
+			__( 'Tawk.to Chat Analytics', 'tawkto-analytics-event' ), // menu_title
 			'manage_options', // capability
 			'analytics-events-for-tawkto-chat', // menu_slug
 			array( $this, 'analytics_events_for_tawkto_chat_create_admin_page' ) // function
@@ -26,8 +26,7 @@ class AnalyticsEventsForTawktoChat {
 		$this->analytics_events_for_tawkto_chat_options = get_option( 'TAE_options' ); ?>
 
 		<div class="wrap">
-			<h2Analytics Events for Tawkto Chat Configuration</h2>
-			<p>text at the top of the page</p>
+			<h2>Analytics Events for Tawkto Chat Configuration</h2>
 			<?php settings_errors(); ?>
 
 			<form method="post" action="options.php">
@@ -50,14 +49,14 @@ class AnalyticsEventsForTawktoChat {
 
 		add_settings_section(
 			'analytics_events_for_tawkto_chat_setting_section_ongoing', // id
-			'Ongoing Chat event', // title
+			__( 'Ongoing Chat event', 'tawkto-analytics-event' ), // title
 			array( $this, 'analytics_events_for_tawkto_chat_section_info' ), // callback
 			'analytics-events-for-tawkto-chat-admin' // page
 		);
 
 		add_settings_field(
 			'enable_ongoing', // id
-			'Enable sending Event when Chat is OnGoing for XX seconds', // title
+			__( 'Enable sending Event when Chat is OnGoing for XX seconds', 'tawkto-analytics-event' ), // title
 			array( $this, 'enable_ongoing_callback' ), // callback
 			'analytics-events-for-tawkto-chat-admin', // page
 			'analytics_events_for_tawkto_chat_setting_section_ongoing' // section
@@ -65,7 +64,7 @@ class AnalyticsEventsForTawktoChat {
 
 		add_settings_field(
 			'chat_duration', // id
-			'Minimum Chat duration for trigger the event', // title
+			__( 'Minimum Chat duration for trigger the event (seconds)', 'tawkto-analytics-event' ), // title
 			array( $this, 'chat_duration_callback' ), // callback
 			'analytics-events-for-tawkto-chat-admin', // page
 			'analytics_events_for_tawkto_chat_setting_section_ongoing' // section
@@ -73,7 +72,7 @@ class AnalyticsEventsForTawktoChat {
 
 		add_settings_field(
 			'analytics_event_category_for_ongoing', // id
-			'Analytics Event Category for Ongoing', // title
+			__( 'Analytics Event Category for Ongoing', 'tawkto-analytics-event' ), // title
 			array( $this, 'analytics_event_category_for_ongoing_callback' ), // callback
 			'analytics-events-for-tawkto-chat-admin', // page
 			'analytics_events_for_tawkto_chat_setting_section_ongoing' // section
@@ -81,7 +80,7 @@ class AnalyticsEventsForTawktoChat {
 
 		add_settings_field(
 			'analytics_event_action_for_ongoing', // id
-			'Analytics Event Action for Ongoing', // title
+			__( 'Analytics Event Action for Ongoing', 'tawkto-analytics-event' ), // title
 			array( $this, 'analytics_event_action_for_ongoing_callback' ), // callback
 			'analytics-events-for-tawkto-chat-admin', // page
 			'analytics_events_for_tawkto_chat_setting_section_ongoing' // section
@@ -89,14 +88,14 @@ class AnalyticsEventsForTawktoChat {
 
 		add_settings_section(
 			'analytics_events_for_tawkto_chat_setting_section_offline', // id
-			'Offline Chat event', // title
+			__( 'Offline Chat event', 'tawkto-analytics-event' ), // title
 			array( $this, 'analytics_events_for_tawkto_chat_section_info' ), // callback
 			'analytics-events-for-tawkto-chat-admin' // page
 		);
 
 		add_settings_field(
 			'enable_offline', // id
-			'Enable sending Event when a form from an offline Chat is submitted', // title
+			__( 'Enable sending Event when a form from an offline Chat is submitted', 'tawkto-analytics-event' ), // title
 			array( $this, 'enable_offline_callback' ), // callback
 			'analytics-events-for-tawkto-chat-admin', // page
 			'analytics_events_for_tawkto_chat_setting_section_offline' // section
@@ -104,7 +103,7 @@ class AnalyticsEventsForTawktoChat {
 
 		add_settings_field(
 			'analytics_event_category_for_offline', // id
-			'Analytics Event Category for Offline', // title
+			__( 'Analytics Event Category for Offline', 'tawkto-analytics-event' ), // title
 			array( $this, 'analytics_event_category_for_offline_callback' ), // callback
 			'analytics-events-for-tawkto-chat-admin', // page
 			'analytics_events_for_tawkto_chat_setting_section_offline' // section
@@ -112,7 +111,7 @@ class AnalyticsEventsForTawktoChat {
 
 		add_settings_field(
 			'analytics_event_action_for_offline', // id
-			'Analytics Event Action for Offline', // title
+			__( 'Analytics Event Action for Offline', 'tawkto-analytics-event' ), // title
 			array( $this, 'analytics_event_action_for_offline_callback' ), // callback
 			'analytics-events-for-tawkto-chat-admin', // page
 			'analytics_events_for_tawkto_chat_setting_section_offline' // section
