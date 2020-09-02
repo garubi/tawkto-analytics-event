@@ -14,8 +14,8 @@ class AnalyticsEventsForTawktoChat {
 
 	public function analytics_events_for_tawkto_chat_add_plugin_page() {
 		add_options_page(
-			'Analytics Events for Tawkto Chat Configuration', // page_title
-			'Tawkto Chat Analytics', // menu_title
+			'Analytics Events for Tawk.to Chat Configuration', // page_title
+			'Tawk.to Chat Analytics', // menu_title
 			'manage_options', // capability
 			'analytics-events-for-tawkto-chat', // menu_slug
 			array( $this, 'analytics_events_for_tawkto_chat_create_admin_page' ) // function
