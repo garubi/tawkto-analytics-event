@@ -5,7 +5,7 @@
  */
 
 class AnalyticsEventsForTawktoChat {
-	private $analytics_events_for_tawkto_chat_options;
+	private $tae_options;
 
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'analytics_events_for_tawkto_chat_add_plugin_page' ) );
@@ -23,7 +23,7 @@ class AnalyticsEventsForTawktoChat {
 	}
 
 	public function analytics_events_for_tawkto_chat_create_admin_page() {
-		$this->analytics_events_for_tawkto_chat_options = get_option( 'analytics_events_for_tawkto_chat_option_name' ); ?>
+		$this->analytics_events_for_tawkto_chat_options = get_option( 'TAE_options' ); ?>
 
 		<div class="wrap">
 			<h2Analytics Events for Tawkto Chat Configuration</h2>
@@ -43,7 +43,7 @@ class AnalyticsEventsForTawktoChat {
 	public function analytics_events_for_tawkto_chat_page_init() {
 		register_setting(
 			'analytics_events_for_tawkto_chat_option_group', // option_group
-			'analytics_events_for_tawkto_chat_option_name', // option_name
+			'TAE_options', // option_name
 			array( $this, 'analytics_events_for_tawkto_chat_sanitize' ) // sanitize_callback
 		);
 
@@ -56,33 +56,33 @@ class AnalyticsEventsForTawktoChat {
 		);
 
 		add_settings_field(
-			'enable_sending_event_when_chat_is_ongoing_for_xx_seconds_0', // id
+			'enable_ongoing', // id
 			'Enable sending Event when Chat is OnGoing for XX seconds', // title
-			array( $this, 'enable_sending_event_when_chat_is_ongoing_for_xx_seconds_0_callback' ), // callback
+			array( $this, 'enable_ongoing_callback' ), // callback
 			'analytics-events-for-tawkto-chat-admin', // page
 			'analytics_events_for_tawkto_chat_setting_section_ongoing' // section
 		);
 
 		add_settings_field(
-			'minimum_chat_duration_for_trigger_the_event_1', // id
+			'chat_duration', // id
 			'Minimum Chat duration for trigger the event', // title
-			array( $this, 'minimum_chat_duration_for_trigger_the_event_1_callback' ), // callback
+			array( $this, 'chat_duration_callback' ), // callback
 			'analytics-events-for-tawkto-chat-admin', // page
 			'analytics_events_for_tawkto_chat_setting_section_ongoing' // section
 		);
 
 		add_settings_field(
-			'analytics_event_category_for_ongoing_2', // id
+			'analytics_event_category_for_ongoing', // id
 			'Analytics Event Category for Ongoing', // title
-			array( $this, 'analytics_event_category_for_ongoing_2_callback' ), // callback
+			array( $this, 'analytics_event_category_for_ongoing_callback' ), // callback
 			'analytics-events-for-tawkto-chat-admin', // page
 			'analytics_events_for_tawkto_chat_setting_section_ongoing' // section
 		);
 
 		add_settings_field(
-			'analytics_event_action_for_ongoing_3', // id
+			'analytics_event_action_for_ongoing', // id
 			'Analytics Event Action for Ongoing', // title
-			array( $this, 'analytics_event_action_for_ongoing_3_callback' ), // callback
+			array( $this, 'analytics_event_action_for_ongoing_callback' ), // callback
 			'analytics-events-for-tawkto-chat-admin', // page
 			'analytics_events_for_tawkto_chat_setting_section_ongoing' // section
 		);
@@ -95,25 +95,25 @@ class AnalyticsEventsForTawktoChat {
 		);
 
 		add_settings_field(
-			'enable_sending_event_when_a_form_from_an_offline_chat_is_submitted_4', // id
+			'enable_offline', // id
 			'Enable sending Event when a form from an offline Chat is submitted', // title
-			array( $this, 'enable_sending_event_when_a_form_from_an_offline_chat_is_submitted_4_callback' ), // callback
+			array( $this, 'enable_offline_callback' ), // callback
 			'analytics-events-for-tawkto-chat-admin', // page
 			'analytics_events_for_tawkto_chat_setting_section_offline' // section
 		);
 
 		add_settings_field(
-			'analytics_event_category_for_offline_5', // id
+			'analytics_event_category_for_offline', // id
 			'Analytics Event Category for Offline', // title
-			array( $this, 'analytics_event_category_for_offline_5_callback' ), // callback
+			array( $this, 'analytics_event_category_for_offline_callback' ), // callback
 			'analytics-events-for-tawkto-chat-admin', // page
 			'analytics_events_for_tawkto_chat_setting_section_offline' // section
 		);
 
 		add_settings_field(
-			'analytics_event_action_for_offline_6', // id
+			'analytics_event_action_for_offline', // id
 			'Analytics Event Action for Offline', // title
-			array( $this, 'analytics_event_action_for_offline_6_callback' ), // callback
+			array( $this, 'analytics_event_action_for_offline_callback' ), // callback
 			'analytics-events-for-tawkto-chat-admin', // page
 			'analytics_events_for_tawkto_chat_setting_section_offline' // section
 		);
@@ -121,32 +121,32 @@ class AnalyticsEventsForTawktoChat {
 
 	public function analytics_events_for_tawkto_chat_sanitize($input) {
 		$sanitary_values = array();
-		if ( isset( $input['enable_sending_event_when_chat_is_ongoing_for_xx_seconds_0'] ) ) {
-			$sanitary_values['enable_sending_event_when_chat_is_ongoing_for_xx_seconds_0'] = $input['enable_sending_event_when_chat_is_ongoing_for_xx_seconds_0'];
+		if ( isset( $input['enable_ongoing'] ) ) {
+			$sanitary_values['enable_ongoing'] = $input['enable_ongoing'];
 		}
 
-		if ( isset( $input['minimum_chat_duration_for_trigger_the_event_1'] ) ) {
-			$sanitary_values['minimum_chat_duration_for_trigger_the_event_1'] = sanitize_text_field( $input['minimum_chat_duration_for_trigger_the_event_1'] );
+		if ( isset( $input['chat_duration'] ) ) {
+			$sanitary_values['chat_duration'] = sanitize_text_field( $input['chat_duration'] );
 		}
 
-		if ( isset( $input['analytics_event_category_for_ongoing_2'] ) ) {
-			$sanitary_values['analytics_event_category_for_ongoing_2'] = sanitize_text_field( $input['analytics_event_category_for_ongoing_2'] );
+		if ( isset( $input['analytics_event_category_for_ongoing'] ) ) {
+			$sanitary_values['analytics_event_category_for_ongoing'] = sanitize_text_field( $input['analytics_event_category_for_ongoing'] );
 		}
 
-		if ( isset( $input['analytics_event_action_for_ongoing_3'] ) ) {
-			$sanitary_values['analytics_event_action_for_ongoing_3'] = sanitize_text_field( $input['analytics_event_action_for_ongoing_3'] );
+		if ( isset( $input['analytics_event_action_for_ongoing'] ) ) {
+			$sanitary_values['analytics_event_action_for_ongoing'] = sanitize_text_field( $input['analytics_event_action_for_ongoing'] );
 		}
 
-		if ( isset( $input['enable_sending_event_when_a_form_from_an_offline_chat_is_submitted_4'] ) ) {
-			$sanitary_values['enable_sending_event_when_a_form_from_an_offline_chat_is_submitted_4'] = $input['enable_sending_event_when_a_form_from_an_offline_chat_is_submitted_4'];
+		if ( isset( $input['enable_offline'] ) ) {
+			$sanitary_values['enable_offline'] = $input['enable_offline'];
 		}
 
-		if ( isset( $input['analytics_event_category_for_offline_5'] ) ) {
-			$sanitary_values['analytics_event_category_for_offline_5'] = sanitize_text_field( $input['analytics_event_category_for_offline_5'] );
+		if ( isset( $input['analytics_event_category_for_offline'] ) ) {
+			$sanitary_values['analytics_event_category_for_offline'] = sanitize_text_field( $input['analytics_event_category_for_offline'] );
 		}
 
-		if ( isset( $input['analytics_event_action_for_offline_6'] ) ) {
-			$sanitary_values['analytics_event_action_for_offline_6'] = sanitize_text_field( $input['analytics_event_action_for_offline_6'] );
+		if ( isset( $input['analytics_event_action_for_offline'] ) ) {
+			$sanitary_values['analytics_event_action_for_offline'] = sanitize_text_field( $input['analytics_event_action_for_offline'] );
 		}
 
 		return $sanitary_values;
@@ -156,52 +156,52 @@ class AnalyticsEventsForTawktoChat {
 
 	}
 
-	public function enable_sending_event_when_chat_is_ongoing_for_xx_seconds_0_callback() {
+	public function enable_ongoing_callback() {
 		printf(
-			'<input type="checkbox" name="analytics_events_for_tawkto_chat_option_name[enable_sending_event_when_chat_is_ongoing_for_xx_seconds_0]" id="enable_sending_event_when_chat_is_ongoing_for_xx_seconds_0" value="1" %s>',
-			( isset( $this->analytics_events_for_tawkto_chat_options['enable_sending_event_when_chat_is_ongoing_for_xx_seconds_0'] ) && $this->analytics_events_for_tawkto_chat_options['enable_sending_event_when_chat_is_ongoing_for_xx_seconds_0'] == '1' ) ? 'checked' : ''
+			'<input type="checkbox" name="TAE_options[enable_ongoing]" id="enable_ongoing" value="1" %s>',
+			( isset( $this->analytics_events_for_tawkto_chat_options['enable_ongoing'] ) && $this->analytics_events_for_tawkto_chat_options['enable_ongoing'] == '1' ) ? 'checked' : ''
 		);
 	}
 
-	public function minimum_chat_duration_for_trigger_the_event_1_callback() {
+	public function chat_duration_callback() {
 		printf(
-			'<input class="regular-text" type="text" name="analytics_events_for_tawkto_chat_option_name[minimum_chat_duration_for_trigger_the_event_1]" id="minimum_chat_duration_for_trigger_the_event_1" value="%s">',
-			isset( $this->analytics_events_for_tawkto_chat_options['minimum_chat_duration_for_trigger_the_event_1'] ) ? esc_attr( $this->analytics_events_for_tawkto_chat_options['minimum_chat_duration_for_trigger_the_event_1']) : ''
+			'<input class="regular-text" type="text" name="TAE_options[chat_duration]" id="chat_duration" value="%s">',
+			isset( $this->analytics_events_for_tawkto_chat_options['chat_duration'] ) ? esc_attr( $this->analytics_events_for_tawkto_chat_options['chat_duration']) : ''
 		);
 	}
 
-	public function analytics_event_category_for_ongoing_2_callback() {
+	public function analytics_event_category_for_ongoing_callback() {
 		printf(
-			'<input class="regular-text" type="text" name="analytics_events_for_tawkto_chat_option_name[analytics_event_category_for_ongoing_2]" id="analytics_event_category_for_ongoing_2" value="%s">',
-			isset( $this->analytics_events_for_tawkto_chat_options['analytics_event_category_for_ongoing_2'] ) ? esc_attr( $this->analytics_events_for_tawkto_chat_options['analytics_event_category_for_ongoing_2']) : ''
+			'<input class="regular-text" type="text" name="TAE_options[analytics_event_category_for_ongoing]" id="analytics_event_category_for_ongoing" value="%s">',
+			isset( $this->analytics_events_for_tawkto_chat_options['analytics_event_category_for_ongoing'] ) ? esc_attr( $this->analytics_events_for_tawkto_chat_options['analytics_event_category_for_ongoing']) : ''
 		);
 	}
 
-	public function analytics_event_action_for_ongoing_3_callback() {
+	public function analytics_event_action_for_ongoing_callback() {
 		printf(
-			'<input class="regular-text" type="text" name="analytics_events_for_tawkto_chat_option_name[analytics_event_action_for_ongoing_3]" id="analytics_event_action_for_ongoing_3" value="%s">',
-			isset( $this->analytics_events_for_tawkto_chat_options['analytics_event_action_for_ongoing_3'] ) ? esc_attr( $this->analytics_events_for_tawkto_chat_options['analytics_event_action_for_ongoing_3']) : ''
+			'<input class="regular-text" type="text" name="TAE_options[analytics_event_action_for_ongoing]" id="analytics_event_action_for_ongoing" value="%s">',
+			isset( $this->analytics_events_for_tawkto_chat_options['analytics_event_action_for_ongoing'] ) ? esc_attr( $this->analytics_events_for_tawkto_chat_options['analytics_event_action_for_ongoing']) : ''
 		);
 	}
 
-	public function enable_sending_event_when_a_form_from_an_offline_chat_is_submitted_4_callback() {
+	public function enable_offline_callback() {
 		printf(
-			'<input type="checkbox" name="analytics_events_for_tawkto_chat_option_name[enable_sending_event_when_a_form_from_an_offline_chat_is_submitted_4]" id="enable_sending_event_when_a_form_from_an_offline_chat_is_submitted_4" value="1" %s>',
-			( isset( $this->analytics_events_for_tawkto_chat_options['enable_sending_event_when_a_form_from_an_offline_chat_is_submitted_4'] ) && $this->analytics_events_for_tawkto_chat_options['enable_sending_event_when_a_form_from_an_offline_chat_is_submitted_4'] == '1' ) ? 'checked' : ''
+			'<input type="checkbox" name="TAE_options[enable_offline]" id="enable_offline" value="1" %s>',
+			( isset( $this->analytics_events_for_tawkto_chat_options['enable_offline'] ) && $this->analytics_events_for_tawkto_chat_options['enable_offline'] == '1' ) ? 'checked' : ''
 		);
 	}
 
-	public function analytics_event_category_for_offline_5_callback() {
+	public function analytics_event_category_for_offline_callback() {
 		printf(
-			'<input class="regular-text" type="text" name="analytics_events_for_tawkto_chat_option_name[analytics_event_category_for_offline_5]" id="analytics_event_category_for_offline_5" value="%s">',
-			isset( $this->analytics_events_for_tawkto_chat_options['analytics_event_category_for_offline_5'] ) ? esc_attr( $this->analytics_events_for_tawkto_chat_options['analytics_event_category_for_offline_5']) : ''
+			'<input class="regular-text" type="text" name="TAE_options[analytics_event_category_for_offline]" id="analytics_event_category_for_offline" value="%s">',
+			isset( $this->analytics_events_for_tawkto_chat_options['analytics_event_category_for_offline'] ) ? esc_attr( $this->analytics_events_for_tawkto_chat_options['analytics_event_category_for_offline']) : ''
 		);
 	}
 
-	public function analytics_event_action_for_offline_6_callback() {
+	public function analytics_event_action_for_offline_callback() {
 		printf(
-			'<input class="regular-text" type="text" name="analytics_events_for_tawkto_chat_option_name[analytics_event_action_for_offline_6]" id="analytics_event_action_for_offline_6" value="%s">',
-			isset( $this->analytics_events_for_tawkto_chat_options['analytics_event_action_for_offline_6'] ) ? esc_attr( $this->analytics_events_for_tawkto_chat_options['analytics_event_action_for_offline_6']) : ''
+			'<input class="regular-text" type="text" name="TAE_options[analytics_event_action_for_offline]" id="analytics_event_action_for_offline" value="%s">',
+			isset( $this->analytics_events_for_tawkto_chat_options['analytics_event_action_for_offline'] ) ? esc_attr( $this->analytics_events_for_tawkto_chat_options['analytics_event_action_for_offline']) : ''
 		);
 	}
 
@@ -211,12 +211,12 @@ if ( is_admin() )
 
 /*
  * Retrieve this value with:
- * $analytics_events_for_tawkto_chat_options = get_option( 'analytics_events_for_tawkto_chat_option_name' ); // Array of All Options
- * $enable_sending_event_when_chat_is_ongoing_for_xx_seconds_0 = $analytics_events_for_tawkto_chat_options['enable_sending_event_when_chat_is_ongoing_for_xx_seconds_0']; // Enable sending Event when Chat is OnGoing for XX seconds
- * $minimum_chat_duration_for_trigger_the_event_1 = $analytics_events_for_tawkto_chat_options['minimum_chat_duration_for_trigger_the_event_1']; // Minimum Chat duration for trigger the event
- * $analytics_event_category_for_ongoing_2 = $analytics_events_for_tawkto_chat_options['analytics_event_category_for_ongoing_2']; // Analytics Event Category for Ongoing
- * $analytics_event_action_for_ongoing_3 = $analytics_events_for_tawkto_chat_options['analytics_event_action_for_ongoing_3']; // Analytics Event Action for Ongoing
- * $enable_sending_event_when_a_form_from_an_offline_chat_is_submitted_4 = $analytics_events_for_tawkto_chat_options['enable_sending_event_when_a_form_from_an_offline_chat_is_submitted_4']; // Enable sending Event when a form from an offline Chat is submitted
- * $analytics_event_category_for_offline_5 = $analytics_events_for_tawkto_chat_options['analytics_event_category_for_offline_5']; // Analytics Event Category for Offline
- * $analytics_event_action_for_offline_6 = $analytics_events_for_tawkto_chat_options['analytics_event_action_for_offline_6']; // Analytics Event Action for Offline
+ * $tae_options = get_option( 'TAE_options' ); // Array of All Options
+ * $enable_ongoing = $tae_options['enable_ongoing']; // Enable sending Event when Chat is OnGoing for XX seconds
+ * $chat_duration = $tae_options['chat_duration']; // Minimum Chat duration for trigger the event
+ * $analytics_event_category_for_ongoing = $tae_options['analytics_event_category_for_ongoing']; // Analytics Event Category for Ongoing
+ * $analytics_event_action_for_ongoing = $tae_options['analytics_event_action_for_ongoing']; // Analytics Event Action for Ongoing
+ * $enable_offline = $tae_options['enable_offline']; // Enable sending Event when a form from an offline Chat is submitted
+ * $analytics_event_category_for_offline = $tae_options['analytics_event_category_for_offline']; // Analytics Event Category for Offline
+ * $analytics_event_action_for_offline = $tae_options['analytics_event_action_for_offline']; // Analytics Event Action for Offline
  */
