@@ -1,12 +1,12 @@
 # Copyright (C) 2020 Stefano Garuti
-# This file is distributed under the same license as the Analytics Events for Tawkto Chat plugin.
+# This file is distributed under the same license as the Analytics Events for Tawk.to Chat plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Analytics Events for Tawkto Chat 1.0\n"
+"Project-Id-Version: Analytics Events for Tawk.to Chat 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/tawkto-analytics-"
 "event\n"
-"POT-Creation-Date: 2020-09-01T08:52:29+00:00\n"
-"PO-Revision-Date: 2020-09-01 11:09+0100\n"
+"POT-Creation-Date: 2020-09-02 13:07+0100\n"
+"PO-Revision-Date: 2020-09-02 13:20+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,16 +18,18 @@ msgstr ""
 "X-Domain: tawkto-analytics-event\n"
 
 #.   Plugin Name of the plugin
-msgid "Analytics Events for Tawkto Chat"
-msgstr "Analytics Events for Tawkto Chat"
+#| msgid "Analytics Events for Tawkto Chat"
+msgid "Analytics Events for Tawk.to Chat"
+msgstr "Analytics Events for Tawk.to Chat"
 
 #.   Plugin URI of the plugin
 msgid "https://github.com/garubi/tawkto-analytics-event"
 msgstr "https://github.com/garubi/tawkto-analytics-event"
 
 #.   Description of the plugin
-msgid "Send an event to Google Analytics when a visitor interacts with the Tawkto Chat widget."
-msgstr "Invia un Evento a Google Analytics quando un visitatore interagisce con il widget della chat di Tawkto."
+#| msgid "Send an event to Google Analytics when a visitor interacts with the Tawkto Chat widget."
+msgid "Send an event to Google Analytics when a visitor interacts with the Tawk.to Chat widget."
+msgstr "Invia un Evento a Google Analytics quando un visitatore interagisce con il widget della chat di Tawk.to."
 
 #.   Author of the plugin
 msgid "Stefano Garuti"
@@ -37,14 +39,59 @@ msgstr "Stefano Garuti"
 msgid "https://garuti.it"
 msgstr "https://garuti.it"
 
-#: tawkto-analytics-event.php:30
+#: admin/settings.php:17
+msgid "Analytics Events for Tawk.to Chat Configuration"
+msgstr "Configurazione di Analytics Events for Tawk.to Chat Configuration"
+
+#: admin/settings.php:18
+msgid "Tawk.to Chat Analytics"
+msgstr "Tawk.to Chat Analytics"
+
+#: admin/settings.php:52
+msgid "Ongoing Chat event"
+msgstr "Evento per Chat in corso"
+
+#: admin/settings.php:59
+msgid "Enable sending Event when Chat is OnGoing for XX seconds"
+msgstr "Abilita l'invio dell'Evento quando la Chat è in corso per XX secondi"
+
+#: admin/settings.php:67
+msgid "Minimum Chat duration for trigger the event (seconds)"
+msgstr "Durata minima della chat per inviare l'Evento (secondi)"
+
+#: admin/settings.php:75
+msgid "Analytics Event Category for Ongoing"
+msgstr "Categoria dell'Evento Analytics per Chat in corso"
+
+#: admin/settings.php:83
+msgid "Analytics Event Action for Ongoing"
+msgstr "Azione dell'Evento Analytics per Chat in corso"
+
+#: admin/settings.php:91
+msgid "Offline Chat event"
+msgstr "Evento per Chat offline"
+
+#: admin/settings.php:98
+msgid "Enable sending Event when a form from an offline Chat is submitted"
+msgstr "Abilita l'invio dell'Evento quando la Chat è offline"
+
+#: admin/settings.php:106
+msgid "Analytics Event Category for Offline"
+msgstr "Categoria dell'Evento Analytics per Chat offline"
+
+#: admin/settings.php:114
+msgid "Analytics Event Action for Offline"
+msgstr "Azione dell'Evento Analytics per Chat offline"
+
+#: tawkto-analytics-event.php:35
+#: tawkto-analytics-event.php:36
 msgid "Chat"
 msgstr "Chat"
 
-#: tawkto-analytics-event.php:31
+#: tawkto-analytics-event.php:38
 msgid "Ongoing chat"
 msgstr "Chat In corso"
 
-#: tawkto-analytics-event.php:32
+#: tawkto-analytics-event.php:39
 msgid "Form sent from offline chat"
 msgstr "Invio form per chat offline"

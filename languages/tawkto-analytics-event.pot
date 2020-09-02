@@ -1,21 +1,21 @@
 # Copyright (C) 2020 Stefano Garuti
-# This file is distributed under the same license as the Analytics Events for Tawkto Chat plugin.
+# This file is distributed under the same license as the Analytics Events for Tawk.to Chat plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Analytics Events for Tawkto Chat 1.0.1\n"
+"Project-Id-Version: Analytics Events for Tawk.to Chat 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/tawkto-analytics-event\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-09-02T10:00:13+00:00\n"
+"POT-Creation-Date: 2020-09-02T11:02:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
 "X-Domain: tawkto-analytics-event\n"
 
 #. Plugin Name of the plugin
-msgid "Analytics Events for Tawkto Chat"
+msgid "Analytics Events for Tawk.to Chat"
 msgstr ""
 
 #. Plugin URI of the plugin
@@ -23,7 +23,7 @@ msgid "https://github.com/garubi/tawkto-analytics-event"
 msgstr ""
 
 #. Description of the plugin
-msgid "Send an event to Google Analytics when a visitor interacts with the Tawkto Chat widget."
+msgid "Send an event to Google Analytics when a visitor interacts with the Tawk.to Chat widget."
 msgstr ""
 
 #. Author of the plugin

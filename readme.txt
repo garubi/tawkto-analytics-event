@@ -5,7 +5,7 @@ Tags: chat, tawkto, analytics
 Requires at least: 4.5
 Tested up to: 5.5.1
 Requires PHP: 7.3.2
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,6 +20,9 @@ This plugins requires that on your site is active a Tawk.to chat widget. The eas
 This plugin supports automatic updates via [GitHub Updater plugin](https://github.com/afragen/github-updater)
 
 == Changelog ==
+
+= 1.1.1 =
+* Fixed Italian Translation
 
 = 1.1 =
 * Added option page in Wordpress Dashboard
