@@ -54,8 +54,8 @@ function TAE_enqueue_js(){
 
 
 	wp_localize_script( 'tawkto_js', 'TAE_VAR', array(
-		'enable_ongoing'	=> $tae_options['enable_ongoing'], // Enable sending Event when Chat is OnGoing for XX seconds
-		'enable_offline'	=> $tae_options['enable_offline'], // Enable sending Event when a form from an offline Chat is submitted
+		'enable_ongoing'	=> ($tae_options['enable_ongoing']) ? 'true' : 'false', // Enable sending Event when Chat is OnGoing for XX seconds
+		'enable_offline'	=> ($tae_options['enable_offline']) ? 'true' : 'false', // Enable sending Event when a form from an offline Chat is submitted
 		'chat_min_lenght'	=> $tae_options['chat_duration'], // Minimum Chat duration for trigger the event
 		'eventCategoryChatOngoing' => $tae_options['analytics_event_category_for_ongoing'], // Analytics Event Category for Ongoing,
 		'eventCategoryonOfflineSubmit' => $tae_options['analytics_event_action_for_ongoing'], // Analytics Event Action for Ongoing,
