@@ -7,14 +7,14 @@
  * Author URI:      https://garuti.it
  * Text Domain:     tawkto-analytics-event
  * Domain Path:     /languages
- * Version:         1.1.2
+ * Version:         1.1.3
  * GitHub Plugin URI: https://github.com/garubi/tawkto-analytics-event
  *
  * @package         Tawkto_Analytics_Event
  */
 
 
-define( 'TAE_VER', '1.0.1' );
+define( 'TAE_VER', '1.1.3' );
 define( 'TAE_URL', plugin_dir_url( __FILE__ ) );
 define( 'TAE_PATH', trailingslashit(plugin_dir_path(__FILE__) ) );
 
@@ -33,9 +33,9 @@ function TAE_activate(){
 		'enable_ongoing' => 1,
 		'chat_duration' => 60,
 		'analytics_event_category_for_ongoing' => __( 'Chat', 'tawkto-analytics-event' ),
-		'analytics_event_action_for_ongoing' => __( 'Chat', 'tawkto-analytics-event' ),
+		'analytics_event_action_for_ongoing' => __( 'Ongoing chat', 'tawkto-analytics-event' ),
 		'enable_offline' => 1,
-		'analytics_event_category_for_offline' => __( 'Ongoing chat', 'tawkto-analytics-event' ),
+		'analytics_event_category_for_offline' => __( 'Chat', 'tawkto-analytics-event' ),
 		'analytics_event_action_for_offline' => __( 'Form sent from offline chat', 'tawkto-analytics-event' ),
 	);
 	add_option( 'TAE_options', $settings );
