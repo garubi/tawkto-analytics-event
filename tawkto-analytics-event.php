@@ -7,14 +7,14 @@
  * Author URI:      https://garuti.it
  * Text Domain:     tawkto-analytics-event
  * Domain Path:     /languages
- * Version:         1.1.3
+ * Version:         1.1.4
  * GitHub Plugin URI: https://github.com/garubi/tawkto-analytics-event
  *
  * @package         Tawkto_Analytics_Event
  */
 
 
-define( 'TAE_VER', '1.1.3' );
+define( 'TAE_VER', '1.1.4' );
 define( 'TAE_URL', plugin_dir_url( __FILE__ ) );
 define( 'TAE_PATH', trailingslashit(plugin_dir_path(__FILE__) ) );
 
@@ -58,8 +58,8 @@ function TAE_enqueue_js(){
 		'enable_offline'	=> ($tae_options['enable_offline']) ? 'true' : 'false', // Enable sending Event when a form from an offline Chat is submitted
 		'chat_min_lenght'	=> $tae_options['chat_duration'], // Minimum Chat duration for trigger the event
 		'eventCategoryChatOngoing' => $tae_options['analytics_event_category_for_ongoing'], // Analytics Event Category for Ongoing,
-		'eventCategoryonOfflineSubmit' => $tae_options['analytics_event_action_for_ongoing'], // Analytics Event Action for Ongoing,
-		'eventActionChatOngoing'	=> $tae_options['analytics_event_category_for_offline'], // Analytics Event Category for Offline
+		'eventActionChatOngoing' => $tae_options['analytics_event_action_for_ongoing'], // Analytics Event Action for Ongoing,
+		'eventCategoryonOfflineSubmit'	=> $tae_options['analytics_event_category_for_offline'], // Analytics Event Category for Offline
 		'eventActiononOfflineSubmit' => $tae_options['analytics_event_action_for_offline'], // Analytics Event Action for Offline
 		'debug'	=> WP_DEBUG,
 	));
