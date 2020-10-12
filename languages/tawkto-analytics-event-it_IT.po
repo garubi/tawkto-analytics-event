@@ -2,11 +2,11 @@
 # This file is distributed under the same license as the Analytics Events for Tawk.to Chat plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Analytics Events for Tawk.to Chat 1.1.1\n"
+"Project-Id-Version: Analytics Events for Tawk.to Chat 1.2-beta\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/tawkto-analytics-"
 "event\n"
-"POT-Creation-Date: 2020-09-02 13:07+0100\n"
-"PO-Revision-Date: 2020-09-02 13:20+0100\n"
+"POT-Creation-Date: 2020-10-12 15:44+0100\n"
+"PO-Revision-Date: 2020-10-12 15:45+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,7 +18,6 @@ msgstr ""
 "X-Domain: tawkto-analytics-event\n"
 
 #.   Plugin Name of the plugin
-#| msgid "Analytics Events for Tawkto Chat"
 msgid "Analytics Events for Tawk.to Chat"
 msgstr "Analytics Events for Tawk.to Chat"
 
@@ -27,7 +26,6 @@ msgid "https://github.com/garubi/tawkto-analytics-event"
 msgstr "https://github.com/garubi/tawkto-analytics-event"
 
 #.   Description of the plugin
-#| msgid "Send an event to Google Analytics when a visitor interacts with the Tawkto Chat widget."
 msgid "Send an event to Google Analytics when a visitor interacts with the Tawk.to Chat widget."
 msgstr "Invia un Evento a Google Analytics quando un visitatore interagisce con il widget della chat di Tawk.to."
 
@@ -48,50 +46,58 @@ msgid "Tawk.to Chat Analytics"
 msgstr "Tawk.to Chat Analytics"
 
 #: admin/settings.php:52
+msgid "Installed Analytics version"
+msgstr "Versione di Analytics installata"
+
+#: admin/settings.php:59
+msgid "Select the Analytics version used on this site"
+msgstr "Scegli la versione di Analytics usata in questo sito"
+
+#: admin/settings.php:67
 msgid "Ongoing Chat event"
 msgstr "Evento per Chat in corso"
 
-#: admin/settings.php:59
+#: admin/settings.php:74
 msgid "Enable sending Event when Chat is OnGoing for XX seconds"
 msgstr "Abilita l'invio dell'Evento quando la Chat è in corso per XX secondi"
 
-#: admin/settings.php:67
+#: admin/settings.php:82
 msgid "Minimum Chat duration for trigger the event (seconds)"
 msgstr "Durata minima della chat per inviare l'Evento (secondi)"
 
-#: admin/settings.php:75
+#: admin/settings.php:90
 msgid "Analytics Event Category for Ongoing"
 msgstr "Categoria dell'Evento Analytics per Chat in corso"
 
-#: admin/settings.php:83
+#: admin/settings.php:98
 msgid "Analytics Event Action for Ongoing"
 msgstr "Azione dell'Evento Analytics per Chat in corso"
 
-#: admin/settings.php:91
+#: admin/settings.php:106
 msgid "Offline Chat event"
 msgstr "Evento per Chat offline"
 
-#: admin/settings.php:98
+#: admin/settings.php:113
 msgid "Enable sending Event when a form from an offline Chat is submitted"
 msgstr "Abilita l'invio dell'Evento quando la Chat è offline"
 
-#: admin/settings.php:106
+#: admin/settings.php:121
 msgid "Analytics Event Category for Offline"
 msgstr "Categoria dell'Evento Analytics per Chat offline"
 
-#: admin/settings.php:114
+#: admin/settings.php:129
 msgid "Analytics Event Action for Offline"
 msgstr "Azione dell'Evento Analytics per Chat offline"
 
-#: tawkto-analytics-event.php:35
 #: tawkto-analytics-event.php:36
+#: tawkto-analytics-event.php:39
 msgid "Chat"
 msgstr "Chat"
 
-#: tawkto-analytics-event.php:38
+#: tawkto-analytics-event.php:37
 msgid "Ongoing chat"
 msgstr "Chat In corso"
 
-#: tawkto-analytics-event.php:39
+#: tawkto-analytics-event.php:40
 msgid "Form sent from offline chat"
 msgstr "Invio form per chat offline"
