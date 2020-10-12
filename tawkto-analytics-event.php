@@ -7,14 +7,14 @@
  * Author URI:      https://garuti.it
  * Text Domain:     tawkto-analytics-event
  * Domain Path:     /languages
- * Version:         1.1.4
+ * Version:         1.2
  * GitHub Plugin URI: https://github.com/garubi/tawkto-analytics-event
  *
  * @package         Tawkto_Analytics_Event
  */
 
 
-define( 'TAE_VER', '1.1.4' );
+define( 'TAE_VER', '1.2' );
 define( 'TAE_URL', plugin_dir_url( __FILE__ ) );
 define( 'TAE_PATH', trailingslashit(plugin_dir_path(__FILE__) ) );
 
