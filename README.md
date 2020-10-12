@@ -5,7 +5,7 @@
 **Requires at least:** 4.5  
 **Tested up to:** 5.5.1  
 **Requires PHP:** 7.0  
-**Stable tag:** 1.1.4  
+**Stable tag:** 1.2  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -13,13 +13,20 @@ Send an event to Google Analytics when a visitor interacts with the Taw.kto Chat
 
 ## Description ##
 
-This plugin sends an Event to Google Analytics if the visitors chat for at least 60 seconds, or if he submit the "Chat Offline Form"
+This plugin sends an Event to Google Analytics if the visitors chat for a configurable amount of time (default 60 seconds), or if he submit the "Chat Offline Form".
+
+Since ver. 1.2 the pluging let you choose if the generated event would be compatible with the newer gtag syntax or with the old Analytics syntax.
 
 This plugins requires that on your site is active a Tawk.to chat widget. The easyest way to install a Tawk.to Chat on your site is by the [official Tawk.to WordPress plugin](https://it.wordpress.org/plugins/tawkto-live-chat/) but you can copy-paste the widget code from Tawk.to dashboard too.
 
 This plugin supports automatic updates via [GitHub Updater plugin](https://github.com/afragen/github-updater)
 
+
+
 ## Changelog ##
+
+### 1.2 ###
+* Added support for the new gtag syntax
 
 ### 1.1.4 ###
 * Other fix for issue #6

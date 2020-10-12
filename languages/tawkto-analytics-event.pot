@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Analytics Events for Tawk.to Chat plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Analytics Events for Tawk.to Chat 1.1.1\n"
+"Project-Id-Version: Analytics Events for Tawk.to Chat 1.2-beta\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/tawkto-analytics-event\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-09-02T11:02:14+00:00\n"
+"POT-Creation-Date: 2020-10-12T13:38:05+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
 "X-Domain: tawkto-analytics-event\n"
@@ -43,50 +43,58 @@ msgid "Tawk.to Chat Analytics"
 msgstr ""
 
 #: admin/settings.php:52
-msgid "Ongoing Chat event"
+msgid "Installed Analytics version"
 msgstr ""
 
 #: admin/settings.php:59
-msgid "Enable sending Event when Chat is OnGoing for XX seconds"
+msgid "Select the Analytics version used on this site"
 msgstr ""
 
 #: admin/settings.php:67
+msgid "Ongoing Chat event"
+msgstr ""
+
+#: admin/settings.php:74
+msgid "Enable sending Event when Chat is OnGoing for XX seconds"
+msgstr ""
+
+#: admin/settings.php:82
 msgid "Minimum Chat duration for trigger the event (seconds)"
 msgstr ""
 
-#: admin/settings.php:75
+#: admin/settings.php:90
 msgid "Analytics Event Category for Ongoing"
 msgstr ""
 
-#: admin/settings.php:83
+#: admin/settings.php:98
 msgid "Analytics Event Action for Ongoing"
 msgstr ""
 
-#: admin/settings.php:91
+#: admin/settings.php:106
 msgid "Offline Chat event"
 msgstr ""
 
-#: admin/settings.php:98
+#: admin/settings.php:113
 msgid "Enable sending Event when a form from an offline Chat is submitted"
 msgstr ""
 
-#: admin/settings.php:106
+#: admin/settings.php:121
 msgid "Analytics Event Category for Offline"
 msgstr ""
 
-#: admin/settings.php:114
+#: admin/settings.php:129
 msgid "Analytics Event Action for Offline"
 msgstr ""
 
-#: tawkto-analytics-event.php:35
 #: tawkto-analytics-event.php:36
+#: tawkto-analytics-event.php:39
 msgid "Chat"
 msgstr ""
 
-#: tawkto-analytics-event.php:38
+#: tawkto-analytics-event.php:37
 msgid "Ongoing chat"
 msgstr ""
 
-#: tawkto-analytics-event.php:39
+#: tawkto-analytics-event.php:40
 msgid "Form sent from offline chat"
 msgstr ""

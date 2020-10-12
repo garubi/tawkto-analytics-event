@@ -48,6 +48,21 @@ class AnalyticsEventsForTawktoChat {
 
 
 		add_settings_section(
+			'analytics_events_for_tawkto_chat_setting_section_version', // id
+			__( 'Installed Analytics version', 'tawkto-analytics-event' ), // title
+			array( $this, 'analytics_events_for_tawkto_chat_section_info' ), // callback
+			'analytics-events-for-tawkto-chat-admin' // page
+		);
+
+		add_settings_field(
+			'analytics_version', // id
+			__( 'Select the Analytics version used on this site', 'tawkto-analytics-event' ), // title
+			array( $this, 'analytics_version_callback' ), // callback
+			'analytics-events-for-tawkto-chat-admin', // page
+			'analytics_events_for_tawkto_chat_setting_section_version' // section
+		);
+
+		add_settings_section(
 			'analytics_events_for_tawkto_chat_setting_section_ongoing', // id
 			__( 'Ongoing Chat event', 'tawkto-analytics-event' ), // title
 			array( $this, 'analytics_events_for_tawkto_chat_section_info' ), // callback
@@ -124,6 +139,10 @@ class AnalyticsEventsForTawktoChat {
 			$sanitary_values['enable_ongoing'] = $input['enable_ongoing'];
 		}
 
+		if ( isset( $input['analytics_version'] ) ) {
+			$sanitary_values['analytics_version'] = sanitize_text_field( $input['analytics_version'] );
+		}
+
 		if ( isset( $input['chat_duration'] ) ) {
 			$sanitary_values['chat_duration'] = sanitize_text_field( $input['chat_duration'] );
 		}
@@ -159,6 +178,17 @@ class AnalyticsEventsForTawktoChat {
 		printf(
 			'<input type="checkbox" name="TAE_options[enable_ongoing]" id="enable_ongoing" value="1" %s>',
 			( isset( $this->analytics_events_for_tawkto_chat_options['enable_ongoing'] ) && $this->analytics_events_for_tawkto_chat_options['enable_ongoing'] == '1' ) ? 'checked' : ''
+		);
+	}
+
+	public function analytics_version_callback() {
+		printf(
+			'<input type="radio" name="TAE_options[analytics_version]" id="analytics_version" value="gtag" %s> <code>gtag</code> (newer)',
+			( isset( $this->analytics_events_for_tawkto_chat_options['analytics_version'] ) && $this->analytics_events_for_tawkto_chat_options['analytics_version'] == 'gtag' ) ? 'checked' : ''
+		);
+		printf(
+			'<br><input type="radio" name="TAE_options[analytics_version]" id="analytics_version" value="analytics" %s> <code>analytics</code> (older)',
+			( isset( $this->analytics_events_for_tawkto_chat_options['analytics_version'] ) && $this->analytics_events_for_tawkto_chat_options['analytics_version'] == 'analytics' ) ? 'checked' : ''
 		);
 	}
 
