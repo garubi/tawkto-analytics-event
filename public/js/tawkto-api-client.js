@@ -17,8 +17,16 @@ var ongoing_check_id= setInterval(function(){
 			if ( diff > 1000 * TAE_VAR.chat_min_lenght){
 				(TAE_VAR.debug) ? console.log('Send event Ongoing chat to Analytics') : '';
 		        if( TAE_VAR.enable_ongoing == 'true' ){
-		        	ga('send', 'event', { eventCategory: TAE_VAR.eventCategoryChatOngoing, eventAction: TAE_VAR.eventActionChatOngoing, eventLabel: TAE_VAR.chat_min_lenght + ' seconds'});
-		        }
+					if( TAE_VAR.analytics_version == 'analytics' ){
+		        		ga('send', 'event', { eventCategory: TAE_VAR.eventCategoryChatOngoing, eventAction: TAE_VAR.eventActionChatOngoing, eventLabel: TAE_VAR.chat_min_lenght + ' seconds'});
+		        	}
+					else{
+						gtag('event', TAE_VAR.eventActionChatOngoing, {
+							'event_category': TAE_VAR.eventCategoryChatOngoing,
+							'event_label': TAE_VAR.chat_min_lenght + ' seconds',
+						});
+					}
+				}
 				else{
 					console.log('Sending event Ongoing chat to Analytics is disabled')
 				}
@@ -37,7 +45,14 @@ var ongoing_check_id= setInterval(function(){
 Tawk_API.onOfflineSubmit = function(data){
 	(TAE_VAR.debug) ? console.log('Send event Chat offline submit to Analytics') : '';
 	if( TAE_VAR.enable_offline == 'true' ){
-		ga('send', 'event', { eventCategory: TAE_VAR.eventCategoryonOfflineSubmit, eventAction: TAE_VAR.eventActiononOfflineSubmit});
+		if( TAE_VAR.analytics_version == 'analytics' ){
+			ga('send', 'event', { eventCategory: TAE_VAR.eventCategoryonOfflineSubmit, eventAction: TAE_VAR.eventActiononOfflineSubmit});
+		}
+		else{
+			gtag('event', TAE_VAR.eventActiononOfflineSubmit, {
+				'event_category': TAE_VAR.eventCategoryonOfflineSubmit,
+			});
+		}
 	}
 	else{
 		console.log('Send event Chat offline submit to Analytics is disabled')
