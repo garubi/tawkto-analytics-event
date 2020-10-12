@@ -49,7 +49,7 @@ class AnalyticsEventsForTawktoChat {
 
 		add_settings_section(
 			'analytics_events_for_tawkto_chat_setting_section_version', // id
-			__( 'Installed Analitycs version', 'tawkto-analytics-event' ), // title
+			__( 'Installed Analytics version', 'tawkto-analytics-event' ), // title
 			array( $this, 'analytics_events_for_tawkto_chat_section_info' ), // callback
 			'analytics-events-for-tawkto-chat-admin' // page
 		);

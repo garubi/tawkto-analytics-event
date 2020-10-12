@@ -43,7 +43,7 @@ msgid "Tawk.to Chat Analytics"
 msgstr ""
 
 #: admin/settings.php:52
-msgid "Installed Analitycs version"
+msgid "Installed Analytics version"
 msgstr ""
 
 #: admin/settings.php:59
