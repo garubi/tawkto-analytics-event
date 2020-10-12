@@ -30,7 +30,8 @@ register_deactivation_hook( __FILE__, 'TAE_deactivate');
 
 function TAE_activate(){
 	$settings = array (
-		'enable_ongoing' => 1,
+		'analytics_version' => 'gtag',
+        'enable_ongoing' => 1,
 		'chat_duration' => 60,
 		'analytics_event_category_for_ongoing' => __( 'Chat', 'tawkto-analytics-event' ),
 		'analytics_event_action_for_ongoing' => __( 'Ongoing chat', 'tawkto-analytics-event' ),
@@ -54,6 +55,7 @@ function TAE_enqueue_js(){
 
 
 	wp_localize_script( 'tawkto_js', 'TAE_VAR', array(
+		'analytics_version'	=> $tae_options['analytics_version'],
 		'enable_ongoing'	=> ($tae_options['enable_ongoing']) ? 'true' : 'false', // Enable sending Event when Chat is OnGoing for XX seconds
 		'enable_offline'	=> ($tae_options['enable_offline']) ? 'true' : 'false', // Enable sending Event when a form from an offline Chat is submitted
 		'chat_min_lenght'	=> $tae_options['chat_duration'], // Minimum Chat duration for trigger the event
